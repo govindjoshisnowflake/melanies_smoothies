@@ -24,7 +24,7 @@ sf_df=st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 #my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 
-ingredient_list=st.multiselect('select 5 ingredients',my_dataframe,max_selections=5)
+ingredient_list=st.multiselect('select 5 ingredients',sf_df,max_selections=5)
 
 
 if ingredient_list:
