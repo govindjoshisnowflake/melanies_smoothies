@@ -23,7 +23,9 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 ingredient_list=st.multiselect('select 5 ingredients',my_dataframe,max_selections=5)
-
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
 
 if ingredient_list:
      st.write("My list",ingredient_list)
